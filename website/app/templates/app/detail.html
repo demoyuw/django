@@ -1,0 +1,10 @@
+<ul>
+{% for book in book_table %}
+    {% if book.name is not True %}
+    <li>{{ book.name }}</li>
+    <li>{{ book.detail }}</li>
+    <li>{{ book.publish_date|date:"Y/m/d h:i" }}</li>
+    <li> ------------------------ </li>
+    {% endif %}
+{% endfor %}
+</ul>
