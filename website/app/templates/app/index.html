@@ -1,3 +1,17 @@
-<ul>
-    <li><a href="/app/{{ get_all }}"></a>{{ get_all }}</li>
-</ul>
+{% if request.user.is_anonymous %}
+<form method="post" action="main">
+    {% csrf_token %}
+    <label for="username">用戶名稱:</label>
+    <input type="text" name="user_name">
+    <label for="username">用戶密碼:</label>
+    <input type="password" name="user_password">
+    <input type="submit" value="login" />
+</form>
+{% endif %}
+<form method="get" action="logout">
+    <input type="submit" value="logout" action='logout'/>
+    <p> log out: {{ logout }}</p>
+</form>
+<p> {{ request.user }} </p>
+<p> Hello {{ username }} </p>
+
