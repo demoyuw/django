@@ -1,15 +1,12 @@
 from django.shortcuts import render
 
-from django.views.decorators.csrf import csrf_exempt
+#from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
-@csrf_exempt
+#@csrf_exempt
 def index(request):
-    context = {
-        "test": "it's working"
-    }
-    return render(request, "isc3/index.html", context)
+    return render(request, "isc3/index.html")
 
 def error404(request):
     return render(request, "isc3/404.html")
@@ -31,3 +28,6 @@ def tables(request):
 
 def login(request):
     return render(request, "isc3/login.html")
+
+def api(request):
+    pass
